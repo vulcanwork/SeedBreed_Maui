@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SeedBreed.Views.PlantEditView"
+             Title="PlantEditView">
+    <VerticalStackLayout>
+        <VerticalStackLayout>
+            <Label Text='Strain:' />
+            <Picker ItemsSource="{Binding Strains}"
+                    SelectedIndex='{Binding SelectedIndex}'
+                    SelectedItem='{Binding SelectedStrain}'
+                    ItemDisplayBinding='{Binding Name}'/>
+            <Label Text='Plant Date:' />
+            <DatePicker Date='{Binding SelectedPlant.PlantDate}' />
+            <Label Text='Havest Date:' />
+            <DatePicker Date='{Binding SelectedPlant.HarvestDate}' />
+
+            <Label Text='Harvest in Grams:' />
+            <Entry Placeholder='Indica%'
+                   Text='{Binding SelectedPlant.HarvestInGrams}' />
+            <Label Text='Mother Plant?' />
+            <CheckBox IsChecked='{Binding SelectedPlant.IsMotherPlant}' />
+            <Label Text='Gifted?' />
+            <CheckBox IsChecked='{Binding SelectedPlant.Gifted}' />
+        </VerticalStackLayout>
+        <Button Text='Save'
+                Command='{Binding SaveCommand}' />
+        <Button Text='Delete'
+                Command='{Binding DeleteCommand}' />
+    </VerticalStackLayout>
+</ContentPage>

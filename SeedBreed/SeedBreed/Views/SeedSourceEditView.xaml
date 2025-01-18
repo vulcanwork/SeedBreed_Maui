@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SeedBreed.Views.SeedSourceEditView"
+             Title="SeedSourceEditView">
+  <VerticalStackLayout>
+    <VerticalStackLayout>
+      <Label Text='Source:' />
+      <Entry Placeholder="Source"
+             Text="{Binding SelectedSource.Source}" />
+      <Label Text='Website:' />
+      <Entry Placeholder='Website'
+             Text='{Binding SelectedSource.Website}' />
+      <Label Text='Rating:' />
+      <Entry Placeholder='Rating'
+             Text='{Binding SelectedSource.Rating}' />
+    </VerticalStackLayout>
+    <Button Text='Save'
+            Command='{Binding SaveCommand}' />
+    <Button Text='Delete'
+            Command='{Binding DeleteCommand}' />
+
+  </VerticalStackLayout>
+</ContentPage>

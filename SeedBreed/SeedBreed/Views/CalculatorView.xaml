@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SeedBreed.Views.CalculatorView"
+             Title="CalculatorView">
+    <VerticalStackLayout>
+        <Frame>
+            <VerticalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text='Cannabis in g' />
+                    <Entry x:Name='text'
+                           Text='{Binding Calculator.GramsCannabis}' />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text='THC %' />
+                    <Entry Text='{Binding Calculator.PercentThc}' />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text='CBD %' />
+                    <Entry Text='{Binding Calculator.PercentCbd}' />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text='Vesicle' />
+                    <Picker ItemsSource='{Binding VesicleString}'
+                            SelectedItem='{Binding SelectedVesicle}' />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text='Oil in ml' />
+                    <Entry Text='{Binding Calculator.MlVesicle}' />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+        <HorizontalStackLayout>
+            <Label Text='Infused THC in mg' />
+            <Label Text='{Binding Calculator.MgThcInfused}' />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text='Infused CBD in mg' />
+            <Label Text='{Binding Calculator.MgCbdInfused}' />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text='mg/ml THC' />
+            <Label Text='{Binding Calculator.MgPerMlThc}' />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text='mg/ml CBD' />
+            <Label Text='{Binding Calculator.MgPerMlCbd}' />
+        </HorizontalStackLayout>
+        <Frame>
+            <HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text='ml Used' />
+                    <Entry Text='{Binding Calculator.MlInfusedOilUsed}' />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text='Total Servings' />
+                    <Entry Text='{Binding Calculator.TotalServings}' />
+                </HorizontalStackLayout>
+            </HorizontalStackLayout>
+        </Frame>
+        <Frame>
+            <VerticalStackLayout>
+                <Label Text='Total mg of THC' />
+                <Label Text='{Binding Calculator.MgThcPerRecipe}' />
+                <Label Text='Total mg of CBD' />
+                <Label Text='{Binding Calculator.MgCbdPerRecipe}' />
+                <Label Text='THC per Serving' />
+                <Label Text='{Binding Calculator.MgThcPerServing}' />
+                <Label Text='CBD per Serving' />
+                <Label Text='{Binding Calculator.MgCbdPerServing}' />
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SeedBreed.Views.SeedSourceView"
+             Title="SeedSourceView">
+  <VerticalStackLayout>
+    <CollectionView ItemsSource='{Binding Seedlings.Source}'
+                    Margin='5'
+                    SelectedItem='{Binding SelectedSource}'
+                    SelectionMode='Single'>
+      <CollectionView.ItemTemplate>
+        <DataTemplate>
+          <VerticalStackLayout>
+            <Label Text="{Binding Path=Source}"
+                   Margin='5' />
+          </VerticalStackLayout>
+        </DataTemplate>
+      </CollectionView.ItemTemplate>
+    </CollectionView>
+    <Button Text='Add'
+            Command='{Binding AddCommand}' />
+  </VerticalStackLayout>
+</ContentPage>

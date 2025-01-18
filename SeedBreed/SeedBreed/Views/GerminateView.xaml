@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SeedBreed.Views.GerminateView"
+             Title="GerminateView">
+  <VerticalStackLayout  HorizontalOptions='Center'>
+    <ListView ItemsSource='{Binding Seedlings.Germinates}'
+                        Margin='5'
+                        SelectedItem='{Binding SelectedGerminate}'
+                        SelectionMode='Single'>
+      <ListView.ItemTemplate>
+        <DataTemplate>
+            <TextCell Text="{Binding Strain}" 
+                      Detail='{Binding GerminationDate}'/>
+                </DataTemplate>
+        
+      </ListView.ItemTemplate>
+    </ListView>
+    <Button Text='Add'
+            Command='{Binding AddCommand}' />
+  </VerticalStackLayout>
+</ContentPage>
