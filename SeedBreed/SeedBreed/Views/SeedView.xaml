@@ -4,21 +4,17 @@
              x:Class="SeedBreed.Views.SeedView"
              Title="SeedView">
   <VerticalStackLayout  HorizontalOptions='Center'>
-    <CollectionView ItemsSource='{Binding Seedlings.Seeds}'
+    <ListView ItemsSource='{Binding Seedlings.Seeds}'
                         Margin='5'
                         SelectedItem='{Binding SelectedSeed}'
                         SelectionMode='Single'>
-      <CollectionView.ItemTemplate>
-        <DataTemplate>
-          <VerticalStackLayout>
-            
-          <Label Text="{Binding Strain}" Margin='5' />
-
-          </VerticalStackLayout>
-        </DataTemplate>
-        
-      </CollectionView.ItemTemplate>
-    </CollectionView>
+      <ListView.ItemTemplate>
+        <DataTemplate>            
+          <TextCell Text="{Binding Strain}" 
+                    Detail='{Binding ThcPercentage}'/>
+        </DataTemplate>        
+      </ListView.ItemTemplate>
+    </ListView>
     <Button Text='Add'
             Command='{Binding AddCommand}' />
   </VerticalStackLayout>

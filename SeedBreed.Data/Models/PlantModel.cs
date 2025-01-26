@@ -4,6 +4,7 @@ public class PlantModel : IQuery
     public string GetQuery => "SELECT * FROM Padawans.vw_Plants";
     public int PlantId { get; set; }
     public int GerminateId { get; set; }
+    public int CloneId { get; set; }
     public DateTime GerminationDate { get; set; }
     public DateTime PlantDate { get; set; } = DateTime.Now;
     public DateTime HarvestDate { get; set; } = DateTime.Now;

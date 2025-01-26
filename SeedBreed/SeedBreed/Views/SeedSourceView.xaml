@@ -4,19 +4,17 @@
              x:Class="SeedBreed.Views.SeedSourceView"
              Title="SeedSourceView">
   <VerticalStackLayout>
-    <CollectionView ItemsSource='{Binding Seedlings.Source}'
+    <ListView ItemsSource='{Binding Seedlings.Source}'
                     Margin='5'
                     SelectedItem='{Binding SelectedSource}'
                     SelectionMode='Single'>
-      <CollectionView.ItemTemplate>
+      <ListView.ItemTemplate>
         <DataTemplate>
-          <VerticalStackLayout>
-            <Label Text="{Binding Path=Source}"
-                   Margin='5' />
-          </VerticalStackLayout>
+            <TextCell Text="{Binding Path=Source}"
+                      Detail='{Binding Website}' />
         </DataTemplate>
-      </CollectionView.ItemTemplate>
-    </CollectionView>
+      </ListView.ItemTemplate>
+    </ListView>
     <Button Text='Add'
             Command='{Binding AddCommand}' />
   </VerticalStackLayout>

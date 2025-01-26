@@ -13,16 +13,24 @@ internal class CalculatorViewModel : EditViewBase
         {
             VesicleString.Add(vesicle.Key);
         }
+        SelectedIndex = 0;
     }
     private ObservableCollection<string> _vesicleString;
     private string _selectedVesicle;
     private decimal _tempDecimal;
     private InfusionCalculator _calculator;
+    private int _selectedIndex;
+    public int SelectedIndex
+    {
+        get { return _selectedIndex; }
+        set { SetProperty(ref _selectedIndex, value); }
+    }
     public string SelectedVesicle
     {
         get => _selectedVesicle;
         set
         {
+            if (value is null) return;
             SetProperty(ref _selectedVesicle, value);
             var t = Calculator.Vesicles[_selectedVesicle];
             Calculator.VesicleYield = t;

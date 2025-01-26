@@ -3,72 +3,66 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SeedBreed.Views.CalculatorView"
              Title="CalculatorView">
-    <VerticalStackLayout>
-        <Frame>
-            <VerticalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text='Cannabis in g' />
-                    <Entry x:Name='text'
-                           Text='{Binding Calculator.GramsCannabis}' />
-                </HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text='THC %' />
-                    <Entry Text='{Binding Calculator.PercentThc}' />
-                </HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text='CBD %' />
-                    <Entry Text='{Binding Calculator.PercentCbd}' />
-                </HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text='Vesicle' />
-                    <Picker ItemsSource='{Binding VesicleString}'
-                            SelectedItem='{Binding SelectedVesicle}' />
-                </HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text='Oil in ml' />
-                    <Entry Text='{Binding Calculator.MlVesicle}' />
-                </HorizontalStackLayout>
-            </VerticalStackLayout>
-        </Frame>
-        <HorizontalStackLayout>
-            <Label Text='Infused THC in mg' />
-            <Label Text='{Binding Calculator.MgThcInfused}' />
-        </HorizontalStackLayout>
-        <HorizontalStackLayout>
-            <Label Text='Infused CBD in mg' />
-            <Label Text='{Binding Calculator.MgCbdInfused}' />
-        </HorizontalStackLayout>
-        <HorizontalStackLayout>
-            <Label Text='mg/ml THC' />
-            <Label Text='{Binding Calculator.MgPerMlThc}' />
-        </HorizontalStackLayout>
-        <HorizontalStackLayout>
-            <Label Text='mg/ml CBD' />
-            <Label Text='{Binding Calculator.MgPerMlCbd}' />
-        </HorizontalStackLayout>
-        <Frame>
-            <HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text='ml Used' />
-                    <Entry Text='{Binding Calculator.MlInfusedOilUsed}' />
-                </HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text='Total Servings' />
-                    <Entry Text='{Binding Calculator.TotalServings}' />
-                </HorizontalStackLayout>
-            </HorizontalStackLayout>
-        </Frame>
-        <Frame>
-            <VerticalStackLayout>
-                <Label Text='Total mg of THC' />
-                <Label Text='{Binding Calculator.MgThcPerRecipe}' />
-                <Label Text='Total mg of CBD' />
-                <Label Text='{Binding Calculator.MgCbdPerRecipe}' />
-                <Label Text='THC per Serving' />
-                <Label Text='{Binding Calculator.MgThcPerServing}' />
-                <Label Text='CBD per Serving' />
-                <Label Text='{Binding Calculator.MgCbdPerServing}' />
-            </VerticalStackLayout>
-        </Frame>
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout>
+            <VerticalStackLayout.Resources>
+                <Style TargetType='Entry'>
+                    <Setter Property='Keyboard'
+                            Value='Numeric' />
+                </Style>
+            </VerticalStackLayout.Resources>
+            <Label Text='Milligrams of Cannabis' />
+            <Entry Text="{Binding Calculator.MgCannabis, StringFormat='{0:#}'}" />
+            <Label Text='Cannabis THC %' />
+            <Entry Text="{Binding Calculator.PercentThc, StringFormat='{0:#}'}" />
+            <Label Text='Cannabis CBD %' />
+            <Entry Text="{Binding Calculator.PercentCbd, StringFormat='{0:#}'}" />
+            <Label Text='Vesicle(Type of Oil/Fat)' />
+            <Picker ItemsSource='{Binding VesicleString}'
+                    SelectedItem='{Binding SelectedVesicle}'
+                    SelectedIndex='{Binding SelectedIndex}' />
+            <Label Text='Milliliters of Oil' />
+            <Entry Text="{Binding Calculator.MlVesicle, StringFormat='{0:#}'}" />
+            <Frame Background="{AppThemeBinding Light=Gray200Brush,Dark=Gray100Brush}">
+                <VerticalStackLayout>
+                    <Label Text='Infused THC in Milligrams:' />
+                    <Label Text="{Binding Calculator.MgThcInfused, StringFormat='{0:#} mg'}"
+                           HorizontalTextAlignment='Center' />
+                    <Label Text='Infused CBD in Milligrams:' />
+                    <Label Text="{Binding Calculator.MgCbdInfused, StringFormat='{0:#} mg'}"
+                           HorizontalTextAlignment='Center' />
+                    <Label Text='Milligrams/Milliliter THC:' />
+                    <Label Text="{Binding Calculator.MgPerMlThc, StringFormat='{0:#} mg'}"
+                           HorizontalTextAlignment='Center' />
+                    <Label Text='Milligrams/Milliliter CBD:' />
+                    <Label Text="{Binding Calculator.MgPerMlCbd, StringFormat='{0:#} mg'}"
+                           HorizontalTextAlignment='Center' />
+                </VerticalStackLayout>
+            </Frame>
+            <Frame>
+                <VerticalStackLayout>
+                    <Label Text='Milliliters of Infused Oil' />
+                    <Entry Text="{Binding Calculator.MlInfusedOilUsed, StringFormat='{0:#}'}" />
+                    <Label Text='Total Servings Made' />
+                    <Entry Text="{Binding Calculator.TotalServings, StringFormat='{0:#}'}" />
+                </VerticalStackLayout>
+            </Frame>
+            <Frame Background="{AppThemeBinding Light=Gray200Brush,Dark=Gray100Brush}">
+                <VerticalStackLayout>
+                    <Label Text='Total Milligrams of THC:' />
+                    <Label Text="{Binding Calculator.MgThcPerRecipe, StringFormat='{0:#} mg'}"
+                           HorizontalOptions="Center" />
+                    <Label Text='Total Milligrams of CBD:' />
+                    <Label Text="{Binding Calculator.MgCbdPerRecipe, StringFormat='{0:#} mg'}"
+                           HorizontalOptions='Center' />
+                    <Label Text='Milligram of THC per Serving:' />
+                    <Label Text="{Binding Calculator.MgThcPerServing, StringFormat='{0:#} mg'}"
+                           HorizontalOptions='Center' />
+                    <Label Text='Milligram of CBD per Serving:' />
+                    <Label Text="{Binding Calculator.MgCbdPerServing, StringFormat='{0:#} mg'}"
+                           HorizontalOptions='Center' />
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SeedBreed.Core;
 public class InfusionCalculator : INotifyPropertyChanged
@@ -18,13 +13,12 @@ public class InfusionCalculator : INotifyPropertyChanged
     private int _mlVesicle = 20;
     private int _mlInfusedOilUsed = 6;
     private int _totalServings = 64;
-    private decimal _mgCbdInfused;
     private decimal _mgCbdTotal;
     private decimal _mgThcTotal;
     private decimal _mgCbdPerServing;
     private decimal _mgThcPerServing;
     private decimal _mgPerMlCbd;
-    private decimal _mgCbdInfused1;
+    private decimal _mgCbdInfused;
     private decimal _mgPerMlThc;
     private bool _calculating;
     public int MgCannabis
@@ -131,10 +125,10 @@ public class InfusionCalculator : INotifyPropertyChanged
 
     public decimal MgCbdInfused
     {
-        get => _mgCbdInfused1;
+        get => _mgCbdInfused;
         set
         {
-            _mgCbdInfused1 = value;
+            _mgCbdInfused = value;
             NotifyPropertyChanged();
             if (!_calculating)
                 CalculateInfusion();

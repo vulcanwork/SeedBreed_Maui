@@ -6,28 +6,6 @@
              Title="SeedEditView">
     <VerticalStackLayout HorizontalOptions='Center'>
         <VerticalStackLayout>
-            <VerticalStackLayout.Resources>
-                <Style x:Key="LabelStyle"
-                       TargetType="Label">
-                    <Setter Property="Margin"
-                            Value="5" />
-                    <Setter Property='HorizontalOptions'
-                            Value='Start' />
-                    <Setter Property='FontSize'
-                            Value='Small' />
-                    <Setter Property='MinimumWidthRequest'
-                            Value='100' />
-                </Style>
-                <Style x:Key="EntryStyle"
-                       TargetType="Entry">
-                    <Setter Property='HorizontalOptions'
-                            Value='Center' />
-                    <Setter Property="Margin"
-                            Value="5" />
-                    <Setter Property='MinimumWidthRequest'
-                            Value='100' />
-                </Style>
-            </VerticalStackLayout.Resources>
             <Label Text='Strain:' />
             <Entry Placeholder="Strain"
                    Text="{Binding SelectedSeed.Strain}" />

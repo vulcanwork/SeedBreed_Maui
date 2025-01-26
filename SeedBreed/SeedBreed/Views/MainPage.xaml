@@ -4,10 +4,10 @@
              xmlns:prism='http://prismlibrary.com'
              xmlns:local='clr-namespace:SeedBreed.Views'
              x:Class="SeedBreed.Views.MainPage"
-             Title="MainPage">
+             Title="Seed Breed" WidthRequest='750'>
     <VerticalStackLayout>
         <Image Source='vwred.png'
-               WidthRequest='200' />
+               WidthRequest='300' />
         <Label Text="Welcome to Seed Breed by VulcanWork"
                FontSize='Subtitle'
                HorizontalOptions='Center' />
